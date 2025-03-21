@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include <stdlib.h>  // Required for rand()
+#include <stdlib.h>  
 
 #define MAX_ROOMS 5  // Maximum number of rooms
 
-// Function Prototypes
+
 void initializeSystem(int rooms, int lights[], int locks[], int motion[], int temperature[]);
 void displayMenu();
 void toggleLight(int rooms, int lights[]);
@@ -50,7 +50,7 @@ int main()
     return 0;
 }
 
-// Function to initialize the system
+
 void initializeSystem(int rooms, int lights[], int locks[], int motion[], int temperature[]) {
     for (int i = 0; i < rooms; i++) {
         lights[i] = 0;     // Lights off
@@ -61,7 +61,7 @@ void initializeSystem(int rooms, int lights[], int locks[], int motion[], int te
     printf("System initialized with %d rooms.\n", rooms);
 }
 
-// Display menu options
+
 void displayMenu() {
     printf("\n===== Smart Home Menu =====\n");
     printf("1. Toggle Light\n");
@@ -72,7 +72,7 @@ void displayMenu() {
     printf("6. Exit\n");
 }
 
-// Function to toggle lights
+
 void toggleLight(int rooms, int lights[]) {
     int room;
     printf("Enter room number to toggle light (1-%d): ", rooms);
@@ -86,7 +86,7 @@ void toggleLight(int rooms, int lights[]) {
     }
 }
 
-// Function to read temperature of a specific room
+
 void readTemperature(int rooms, int temperature[]) {
     int room;
     printf("Enter room number (1-%d): ", rooms);
@@ -99,21 +99,21 @@ void readTemperature(int rooms, int temperature[]) {
     }
 }
 
-// Function to check motion sensor status
+
 void checkMotion(int rooms, int motion[]) {
     int room;
     printf("Enter room number (1-%d): ", rooms);
     scanf("%d", &room);
     
     if (room >= 1 && room <= rooms) {
-        motion[room - 1] = 1;  // Simulate motion detection
+        motion[room - 1] = 1;  
         printf("Motion detected in Room %d!\n", room);
     } else {
         printf("Invalid room number!\n");
     }
 }
 
-// Function to lock/unlock a room
+
 void securitySystem(int rooms, int locks[]) {
     int room;
     printf("Enter room number to Lock/Unlock (1-%d): ", rooms);
@@ -127,7 +127,7 @@ void securitySystem(int rooms, int locks[]) {
     }
 }
 
-// Function to analyze the status of the entire house
+
 void analyzeHouseStatus(int rooms, int lights[], int locks[], int motion[], int temperature[]) {
     printf("\nHouse Status:\n");
     for (int i = 0; i < rooms; i++) {
